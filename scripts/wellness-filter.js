@@ -1,8 +1,3 @@
-/* ==========================================================
-   STUDENT GUIDE: Wellness Tips Category Filter Script
-   This script handles the interactive filter buttons at the top 
-   of the wellness tips page without embedding code into the HTML.
-   ========================================================== */
 
 document.addEventListener("DOMContentLoaded", function () {
   const filterButtons = document.querySelectorAll(".filter-btn");

@@ -46,11 +46,11 @@ function showSlides(n) {
         dots[slideIndex - 1].className += " active";
     }
 }
-
+//Shows the slide desired
 function currentSlide(n) {
     showSlides(slideIndex = n);
 }
-
+//Loads stuff on page load.  Makes navbar actually appear
 window.onload = function() {
     loadNavbar();
     
