@@ -53,6 +53,7 @@ function currentSlide(n) {
 
 window.onload = function() {
     loadNavbar();
+    
     if (document.getElementsByClassName("mySlides").length > 0) {
         showSlides(slideIndex);
     }
