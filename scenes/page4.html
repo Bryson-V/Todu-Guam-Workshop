@@ -24,7 +24,7 @@
 </p>
 
 <!-- FILTER BUTTONS -->
-<!-- STUDENT NOTE: Removed inline onclick attributes to restrict inline scripting. We now use event listeners in our external script. -->
+<!-- STUDENT NOTE: Using data-filter attributes instead of inline onclick handlers to separate HTML from JavaScript logic. -->
 <div class="filter-container">
   <button class="filter-btn active" data-filter="all">All Tips</button>
   <button class="filter-btn" data-filter="diet">Diet & Nutrition</button>
@@ -107,33 +107,8 @@
   <img src="../assets/Logo2.png" width="200" height="150" alt="OneCare Guam Logo"> 
 </div>
 
-<script src="../scripts/scripts.js"></script>
-
-<!-- STUDENT NOTE: Replaced inline script block and attributes with clean JavaScript event listeners to adhere to security best practices against inline scripting. -->
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const buttons = document.querySelectorAll(".filter-btn");
-    const cards = document.querySelectorAll(".filterDiv");
-
-    buttons.forEach(button => {
-      button.addEventListener("click", function () {
-        // Remove active class from all buttons
-        buttons.forEach(btn => btn.classList.remove("active"));
-        // Add active class to clicked button
-        this.classList.add("active");
-
-        const filterValue = this.getAttribute("data-filter");
-
-        cards.forEach(card => {
-          if (filterValue === "all" || card.classList.contains(filterValue)) {
-            card.style.display = "flex";
-          } else {
-            card.style.display = "none";
-          }
-        });
-      });
-    });
-  });
-</script>
+<!-- All script execution is handled via external JS files to keep HTML clean -->
+<script src="../scripts/navbar.js"></script>
+<script src="../scripts/wellness-filter.js"></script>
 </body>
 </html>
