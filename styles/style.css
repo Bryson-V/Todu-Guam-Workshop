@@ -1,168 +1,58 @@
+/* --- Global Resets & Layout --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+  padding-bottom: 50px;
+}
+
+/* --- Shared Navigation Bar Style --- */
 .navbar {
-  background-color: #5175ab;
-  padding: 5px;
-  text-align: center;
-}
-
-#buttonStyle {
+  display: flex;
   justify-content: center;
-  color: rgb(4, 1, 1);
-  font-size: 20px;
-  padding: 2px;
-  gap: 100px;
+  background-color: #2c3e50;
+  padding: 10px 0;
+  gap: 15px;
 }
 
-h1 {
-  font-size: 75px;
-  color: #0946a0;
+.buttonStyle {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
 
-.header {
-  display:inline-block;
-  padding-top:1;
-  padding-bottom: 2px;
-  border-radius: 5px;
-  font-family: "Arial, Helvetica, sans-serif";
+.buttonStyle:hover {
+  background-color: #2980b9;
 }
 
-.hands {
-    display:inline-block;
-  padding-top: 10px;
-  border-radius: 5px;
+/* --- Shared Headers & Text --- */
+.header h1, h2.section-title {
+  text-align: center;
+  margin: 20px 0;
+  color: #2c3e50;
 }
 
 p {
-  font-size: 20px;
-  color: #000000;
-  font-family: "Arial, Helvetica, sans-serif";
-}
-
-/* Main Container */
-.content-container {
-  display: grid;
-  grid-template-columns: auto auto 1fr; /* Text auto size, Logo auto size, Button takes remaining space */
-  align-items: start;                   /* Aligns everything to the top */
-  gap: 20px;                            /* Universal spacing */
-  padding: 20px;
-}
- 
-/* Pushes the button to the right */
-.donate {
-  justify-self: end;
-}
- 
-/* button */
-.donatebutton {
-  background-color: #0946a0;
-  color: white;
-  font-size: 24px;
-  padding: 12px 24px;
-  border: none;
-  cursor: pointer;
-}
-
-.botlogo {
-  display:inline-block;
-  padding-top: 2px;
-  border-radius: 5px;
-  padding-left: 60px;
-}
-
-.header2 {
-  justify-content: left;
-  align-items: left;
-  padding-bottom: 1px;
-}
-
-h2 {
-  font-size: 30px;
-  color: #000000;
-  font-family: "Arial, Helvetica, sans-serif";
-  display:inline-block;
-  padding-top:1px;
-  padding-bottom: 2px;
-  border-radius: 5px;
   text-align: center;
+  margin: 15px auto;
+  max-width: 800px;
+  padding: 0 20px;
 }
 
-form {
-  border-radius: 1px;
-  background-color: #cccaca;
-  padding: 50px;
-  display:inline-block;
-}
-
-label {display: block;}
-
-input[type=text], select {
-  width: 80%;
-  padding: 12px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-input[type=submit] {
-  width: 40%;
-  background-color: #0946a0;
-  color: white;
-  padding: 14px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-input[type=submit]:hover {
-  background-color: #0946a0;
-}
-
-.form {
-  flex: 0 0 450px;    
-  background: #f9f9f9;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.main-layout {
-  display: flex;
-  gap: 40px;          /* Space between the left content and the form */
-  align-items: flex-start; /* Aligns them to the top */
-  margin-bottom: 20px;
-}
-
-/* Controls width proportions of the left side */
-.left-content {
-  flex: 1;            /* Takes up available space */
-}
-
-/* Existing section styling framework */
-.section-container {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin-bottom: 20px;
-}
-
-.dphss, .todulogo {
-  width: 70px;
-  height: 85px;
-  flex-shrink: 0; 
-}
-
-.dphss1, .todu{
-  padding-top: 1px;
-  padding-bottom: 5px;
-  border-radius: 5px;
-}
-
-.botlogo{
-  float:right;
-}
-
-.botlogo2{
-  float:left;
+/* --- Shared Bottom Logo Style --- */
+.botlogo {
+  text-align: center;
+  margin-top: 40px;
 }

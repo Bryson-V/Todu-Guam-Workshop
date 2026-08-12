@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OneCare Guam</title>
-    <link rel="stylesheet" href="/styles/style.css">
+    <title>OneCare Guam - Financial Support</title>
+    <!-- Global Styles -->
+    <link rel="stylesheet" href="../styles/style.css">
+    <!-- Page-Specific Styles -->
+    <link rel="stylesheet" href="../styles/page2.css">
 </head>
 
 <body>
@@ -12,55 +15,59 @@
 <div id="navbarHolder"></div>
 
 <div class="header">
-  <h1>Need Financial Support?</h1> 
+    <h1>Need Financial Support?</h1> 
 </div>
 
 <!-- Main to hold left n right content -->
 <div class="main-layout">
 
-  <!-- Left Side !-->
-  <div class="left-content">
-    <div class="section-container">
-      <p>This page provides information on affordable and accessible healthcare services across
-      <br> Guam for individuals and families in need. Explore free or low-cost clinics,
-      <br> medical assistance programs, health resources, and community services 
-      <br>that help make quality healthcare more accessible for everyone.</p>
+    <!-- Left Side -->
+    <div class="left-content">
+        <div class="section-container">
+            <p>This page provides information on affordable and accessible healthcare services across
+            <br> Guam for individuals and families in need. Explore free or low-cost clinics,
+            <br> medical assistance programs, health resources, and community services 
+            <br>that help make quality healthcare more accessible for everyone.</p>
+        </div>
+
+        <div class="section-container dphss-card">
+            <div class="dphss">
+                <img src="../assets/OIP.webp" width="70" height="85" alt="DPHSS Logo">
+            </div>
+            <div class="dphss1">
+                <h3>The Department of Public Health and Social Services (DPHSS)</h3>
+                <p><a href="https://dphss.guam.gov/services/mip" target="_blank" rel="noopener noreferrer">Visit MIP - Medically Indigent Program</a></p>
+                <p><a href="https://mybenefits.guam.gov/#/medicalproviders" target="_blank" rel="noopener noreferrer">Visit Approved Medicaid / MIP Providers</a></p>
+            </div>
+        </div>
     </div>
 
-    <div class="section-container">
-      <div class="dphss">
-        <img src="/assets/OIP.webp" width="70" height="85">
-      </div>
-      <div class="dphss1">
-        <h3>The Department of Public Health and Social Services (DPHSS)</h3>
-        <p><a href="https://dphss.guam.gov/services/mip">Visit MIP - Medically Indigent Program</a></p>
-        <p><a href="https://mybenefits.guam.gov/#/medicalproviders">Visit Approved Medicaid / MIP Providers</a></p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Right Side: Form -->
-  <div class="form">
-    <form action="https://www.gofundme.com/" method="get" target="_blank">
-      <h2>Get Financial Help</h2>
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required><br><br>
-      
-      <label for="email">Contact Number or Email Address:</label>
-      <input type="text" id="email" name="email" required><br><br>
-      
-      <label for="reason">Leave us a message:</label><br>
-      <textarea id="reason" name="reason" rows="4" cols="30" required></textarea><br><br>
-      
-      <input type="submit" value="Submit">
-    </form>
-  </div> 
+    <!-- Right Side: Form -->
+    <div class="form-container">
+        <form action="https://www.gofundme.com/" method="get" target="_blank">
+            <h2>Get Financial Help</h2>
+            
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Contact Number or Email Address:</label>
+                <input type="text" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="reason">Leave us a message:</label>
+                <textarea id="reason" name="reason" rows="4" required></textarea>
+            </div>
+            
+            <input type="submit" value="Submit" class="submit-btn">
+        </form>
+    </div> 
 
 </div>
 
-
-
-
+<script src="../scripts/navbar.js"></script>
 </body>
 </html>
-<script src="scripts/scripts.js"></script>
