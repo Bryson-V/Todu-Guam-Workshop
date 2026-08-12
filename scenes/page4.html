@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OneCare Guam</title>
-    <link rel="stylesheet" href="/styles/style.css">
-    <link rel="stylesheet" href="/styles/PGpage4.css"
+    <title>OneCare Guam - Wellness Tips</title>
+    <!-- Global Styles -->
+    <link rel="stylesheet" href="../styles/style.css">
+    <!-- Page-Specific Styles -->
+    <link rel="stylesheet" href="../styles/page4.css">
 </head>
 
 <body>
@@ -13,95 +15,125 @@
 <div id="navbarHolder"></div>
 
 <div class="header">
-
-<h1>Healthy Habits</h1> 
+  <h1>Healthy Habits</h1> 
 </div>
 
-<p>
-    Maintain a healthy lifestyle by eating nutritious foods, staying physically active, getting enough sleep,
-<br>managing stress, and having regular health checkups. Healthy daily habits help prevent illness, improve
-<br>overall well-being, and support a longer, healthier life.
+<p class="intro-text">
+  Maintain a healthy lifestyle by exploring our wellness categories below. 
+  <br>Good daily habits help prevent illness, improve overall well-being, and support a longer, healthier life.
 </p>
 
-<h2 style="text-align:center">Wellness Tips</h2>
-
-<div class="container">
-  <div class="mySlides">
-    <div class="numbertext">1 / 6</div>
-    <img src="/assets/Wash.jpeg">
-  </div>
-
-  <div class="mySlides">
-    <div class="numbertext">2 / 6</div>
-    <img src="/assets/Drinking.png">
-  </div>
-
-  <div class="mySlides">
-    <div class="numbertext">3 / 6</div>
-    <img src="/assets/food.webp">
-  </div>
-    
-  <div class="mySlides">
-    <div class="numbertext">4 / 6</div>
-    <img src="/assets/exercise.webp">
-  </div>
-
-  <div class="mySlides">
-    <div class="numbertext">5 / 6</div>
-    <img src="/assets/sleep.jpg">
-  </div>
-
-  <div class="mySlides">
-    <div class="numbertext">6 / 6</div>
-    <img src="/assets/water.webp">
-  </div>
-
-  <div class="caption-container">
-    <p id="caption"></p>
-  </div>
-
-  <div class="row">
-    <div class="column">
-      <img class="demo cursor" src="/assets/Wash.jpeg"style="width:100%" onclick="currentSlide(1)">
-      <div class="overlay">
-       Wash your hands regularly with soap and clean water for at least 20 seconds. Proper handwashing helps remove germs, prevents the spread of illnesses, and keeps you and those around you healthy. If soap and water are unavailable, use an alcohol-based hand sanitizer.
-      </div>
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="/assets/Drinking.png" style="width:100%" onclick="currentSlide(2)">
-       <div class="overlay">
-       Limit or avoid alcohol and do not smoke. These habits can increase the risk of serious health problems, including heart disease, cancer, and lung disease. Choosing a healthier lifestyle helps protect your body and improves your overall well-being.
-      </div>
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="/assets/food.jpg" style="width:100%" onclick="currentSlide(3)">
-       <div class="overlay">
-        Choose a balanced diet with plenty of fruits, vegetables, whole grains, and lean proteins. Eating healthy provides your body with essential nutrients, boosts your immune system, and helps prevent chronic diseases while keeping you energized.
-      </div>
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="/assets/exercise.webp" style="width:100%" onclick="currentSlide(4)">
-       <div class="overlay">
-        Engage in regular physical activity to maintain a healthy weight, strengthen your heart, and reduce the risk of chronic diseases. Aim for at least 150 minutes of moderate-intensity exercise per week.
-      </div>
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="/assets/sleep.jpg" style="width:100%" onclick="currentSlide(5)">
-       <div class="overlay">
-        Prioritize quality sleep by maintaining a consistent sleep schedule and creating a restful environment. Adequate sleep is essential for physical and mental health, supporting immune function, cognitive performance, and emotional well-being.
-       </div>
-    </div>    
-    <div class="column">
-      <img class="demo cursor" src="/assets/water.webp" style="width:100%" onclick="currentSlide(6)">
-       <div class="overlay">
-        Stay hydrated by drinking plenty of water throughout the day. Proper hydration is crucial for maintaining bodily functions, regulating temperature, and supporting overall health.
-       </div>
-    </div>
-
-  <div class="botlogo"> 
-   <img src="/assets/Logo2.png" width="200" height="150"> 
+<!-- FILTER BUTTONS -->
+<!-- STUDENT NOTE: Removed inline onclick attributes to restrict inline scripting. We now use event listeners in our external script. -->
+<div class="filter-container">
+  <button class="filter-btn active" data-filter="all">All Tips</button>
+  <button class="filter-btn" data-filter="diet">Diet & Nutrition</button>
+  <button class="filter-btn" data-filter="exercise">Exercise</button>
+  <button class="filter-btn" data-filter="hygiene">Hygiene & Lifestyle</button>
 </div>
 
+<!-- CARDS GRID CONTAINER -->
+<div class="tips-grid">
+
+  <!-- CARD 1: DIET -->
+  <div class="tip-card filterDiv diet">
+    <div class="tip-image-box">
+      <img src="../assets/food.webp" alt="Balanced diet">
+    </div>
+    <div class="tip-content">
+      <h2>Diet & Nutrition</h2>
+      <p>Choose a balanced diet with plenty of fruits, vegetables, whole grains, and lean proteins. Eating healthy provides essential nutrients and boosts your immune system.</p>
+    </div>
+  </div>
+
+  <!-- CARD 2: EXERCISE -->
+  <div class="tip-card filterDiv exercise">
+    <div class="tip-image-box">
+      <img src="../assets/exercise.webp" alt="Physical activity">
+    </div>
+    <div class="tip-content">
+      <h2>Physical Activity & Exercise</h2>
+      <p>Engage in regular physical activity to maintain a healthy weight, strengthen your heart, and reduce the risk of chronic diseases.</p>
+    </div>
+  </div>
+
+  <!-- CARD 3: HYGIENE -->
+  <div class="tip-card filterDiv hygiene">
+    <div class="tip-image-box">
+      <img src="../assets/Wash.jpeg" alt="Wash your hands">
+    </div>
+    <div class="tip-content">
+      <h2>Hygiene & Prevention</h2>
+      <p>Wash your hands regularly with soap and clean water for at least 20 seconds to remove germs and prevent the spread of illnesses.</p>
+    </div>
+  </div>
+
+  <!-- CARD 4: LIFESTYLE -->
+  <div class="tip-card filterDiv hygiene">
+    <div class="tip-image-box">
+      <img src="../assets/Drinking.png" alt="Limit alcohol">
+    </div>
+    <div class="tip-content">
+      <h2>Avoid Harmful Habits</h2>
+      <p>Limit or avoid alcohol and do not smoke. These habits increase the risk of serious health problems like heart disease and cancer.</p>
+    </div>
+  </div>
+
+  <!-- CARD 5: SLEEP -->
+  <div class="tip-card filterDiv hygiene">
+    <div class="tip-image-box">
+      <img src="../assets/sleep.jpg" alt="Quality sleep">
+    </div>
+    <div class="tip-content">
+      <h2>Rest & Recovery</h2>
+      <p>Prioritize quality sleep by maintaining a consistent schedule to support immune function, cognitive performance, and emotional well-being.</p>
+    </div>
+  </div>
+
+  <!-- CARD 6: HYDRATION -->
+  <div class="tip-card filterDiv diet">
+    <div class="tip-image-box">
+      <img src="../assets/water.webp" alt="Stay hydrated">
+    </div>
+    <div class="tip-content">
+      <h2>Hydration</h2>
+      <p>Stay hydrated by drinking plenty of water throughout the day to maintain bodily functions and regulate temperature.</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="botlogo"> 
+  <img src="../assets/Logo2.png" width="200" height="150" alt="OneCare Guam Logo"> 
+</div>
+
+<script src="../scripts/scripts.js"></script>
+
+<!-- STUDENT NOTE: Replaced inline script block and attributes with clean JavaScript event listeners to adhere to security best practices against inline scripting. -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const buttons = document.querySelectorAll(".filter-btn");
+    const cards = document.querySelectorAll(".filterDiv");
+
+    buttons.forEach(button => {
+      button.addEventListener("click", function () {
+        // Remove active class from all buttons
+        buttons.forEach(btn => btn.classList.remove("active"));
+        // Add active class to clicked button
+        this.classList.add("active");
+
+        const filterValue = this.getAttribute("data-filter");
+
+        cards.forEach(card => {
+          if (filterValue === "all" || card.classList.contains(filterValue)) {
+            card.style.display = "flex";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      });
+    });
+  });
+</script>
 </body>
 </html>
-<script src="/scripts/scripts.js"></script>
