@@ -10,7 +10,7 @@ body {
   background-color: #f9f9f9;
   color: #333;
   line-height: 1.6;
-  padding-bottom: 50px;
+  padding-bottom: 0;
 }
 
 /* --- Shared Navigation Bar --- */
@@ -119,5 +119,117 @@ p {
     gap: 16px;
     flex-wrap: wrap;
     justify-content: center;
+  }
+}
+
+/* --- Global Footer Styles --- */
+.site-footer {
+  background-color: #1a1a1a;
+  color: #a3a3a3;
+  padding: 50px 20px 20px 20px;
+  font-size: 0.9rem;
+  margin-top: 60px;
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* Brand Section */
+.footer-brand {
+  max-width: 350px;
+}
+
+.footer-logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.footer-logo {
+  height: 32px;
+  width: auto;
+}
+
+.footer-brand-title {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.footer-brand .footer-description {
+  color: #a3a3a3;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+/* Footer Link Columns */
+.footer-nav, .footer-references {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-nav h4, .footer-references h4 {
+  color: #ffffff;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 15px;
+}
+
+.footer-nav ul, .footer-references ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-nav li, .footer-references li {
+  margin-bottom: 8px;
+}
+
+.footer-nav a, .footer-references a {
+  color: #a3a3a3;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-nav a:hover, .footer-references a:hover {
+  color: #ffffff;
+}
+
+/* Bottom Bar */
+.footer-bottom {
+  max-width: 1100px;
+  margin: 40px auto 0 auto;
+  padding-top: 20px;
+  border-top: 1px solid #2a2a2a;
+}
+
+.footer-bottom p {
+  color: #737373;
+  font-size: 0.8rem;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+/* Responsive Footer for smaller screens/mobile */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .footer-brand {
+    max-width: 100%;
   }
 }
