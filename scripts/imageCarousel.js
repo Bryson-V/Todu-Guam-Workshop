@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
 
     const count = RAW_ITEMS.length;
-    const CAROUSEL_ITEMS = [...RAW_ITEMS, ...RAW_ITEMS, ...RAW_ITEMS]; // Triple array for inf rotations
+    const CAROUSEL_ITEMS = [...RAW_ITEMS, ...RAW_ITEMS, ...RAW_ITEMS]; 
 
     const rotatorChamber = document.getElementById("rotatorChamber");
     const dotsContainer = document.getElementById("carousel-dots");
@@ -47,27 +47,29 @@ document.addEventListener("DOMContentLoaded", () => {
     const descEl = document.getElementById("carousel-desc");
     const tagEl = document.getElementById("carousel-tag");
 
-    // Start in the middle set of cards
     let activeIndex = count; 
     let isTransitioning = false;
+    let autoRotateTimer = null;
+
+    // Gesture detection variables
+    let scrollLock = false;
+    let scrollStopTimer = null;
 
     function initCarousel() {
         rotatorChamber.innerHTML = "";
         dotsContainer.innerHTML = "";
 
-        // Build navigation dots for the original item count (6 dots)
         RAW_ITEMS.forEach((_, idx) => {
             const dot = document.createElement("button");
             dot.className = "nav-dot";
-            dot.onclick = () => goToSlide(count + idx);
+            dot.onclick = () => goToSlide(count + idx, true);
             dotsContainer.appendChild(dot);
         });
 
-        // Build 18 cards (3 sets of 6)
         CAROUSEL_ITEMS.forEach((item, index) => {
             const card = document.createElement("div");
             card.className = "chamber-card";
-            card.onclick = () => goToSlide(index);
+            card.onclick = () => goToSlide(index, true);
             
             const img = document.createElement("img");
             img.src = item.image;
@@ -77,11 +79,24 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         updateCarousel(false);
+        resetAutoRotate();
     }
 
-    function goToSlide(index) {
+    function resetAutoRotate() {
+        if (autoRotateTimer) clearInterval(autoRotateTimer);
+        autoRotateTimer = setInterval(() => {
+            if (!isTransitioning) {
+                activeIndex++;
+                updateCarousel(true);
+            }
+        }, 4500);
+    }
+
+    function goToSlide(index, userInitiated = false) {
+        if (isTransitioning) return;
         activeIndex = index;
         updateCarousel(true);
+        if (userInitiated) resetAutoRotate();
     }
 
     function updateCarousel(animated = true) {
@@ -90,7 +105,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const card = cards[i];
             const offset = i - activeIndex;
 
-            // Settings for smooth CSS animation
             card.style.transition = animated 
                 ? "transform 0.7s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.7s ease" 
                 : "none";
@@ -98,18 +112,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Fan angle of cards
             const rotateZ = offset * 22; 
-
             // Vertical separation between cards
             const translateY = offset * 40; 
-
             // Depth push
-            const translateZ = -Math.abs(offset) * 90;    
-            
+            const translateZ = -Math.abs(offset) * 90;
             // # of cards to show on both sides (5 cards total)
             const isVisible = Math.abs(offset) <= 2;
-            
+
             const opacity = isVisible ? (offset === 0 ? 1 : (Math.abs(offset) === 1 ? 0.75 : 0.4)) : 0;   
-            
             const scale = offset === 0 ? 1.15 : (Math.abs(offset) === 1 ? 0.95 : 0.85);         
             
             card.style.transform = `translateY(${translateY}px) translateZ(${translateZ}px) rotateZ(${rotateZ}deg) scale(${scale})`;
@@ -129,13 +139,12 @@ document.addEventListener("DOMContentLoaded", () => {
             dots[i].classList.toggle("active", i === realIndex);
         }
 
-        // Teleport activeIndex seamlessly to middle set
         if (animated) {
             isTransitioning = true;
             setTimeout(() => {
                 if (activeIndex < count) {
                     activeIndex += count;
-                    updateCarousel(false); // Teleport back to middle set without animation
+                    updateCarousel(false);
                 } else if (activeIndex >= count * 2) {
                     activeIndex -= count;
                     updateCarousel(false);
@@ -145,26 +154,28 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Auto-rotate every 4.5 seconds
-    setInterval(() => {
-        if (!isTransitioning) {
-            activeIndex++;
-            updateCarousel(true);
-        }
-    }, 4500);
-
     initCarousel();
 
     rotatorChamber.addEventListener("wheel", (e) => {
         e.preventDefault();
-        if (isTransitioning) return;
 
-        if (e.deltaY > 0) {
-            activeIndex++;
-            updateCarousel(true);
-        } else if (e.deltaY < 0) {
-            activeIndex--;
-            updateCarousel(true);
+        // Detect when the user stops/pauses scrolling (clears gesture lock)
+        clearTimeout(scrollStopTimer);
+        scrollStopTimer = setTimeout(() => {
+            scrollLock = false;
+        }, 10);
+
+        // If lock is active or transition is running, ignore trailing wheel momentum
+        if (scrollLock || isTransitioning) return;
+
+        // Perform exactly 1 slide shift and lock until scroll inertia stops
+        if (Math.abs(e.deltaY) > 5) {
+            scrollLock = true;
+            if (e.deltaY > 0) {
+                goToSlide(activeIndex + 1, true);
+            } else {
+                goToSlide(activeIndex - 1, true);
+            }
         }
     }, { passive: false });
 });
