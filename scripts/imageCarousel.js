@@ -159,16 +159,15 @@ document.addEventListener("DOMContentLoaded", () => {
     rotatorChamber.addEventListener("wheel", (e) => {
         e.preventDefault();
 
-        // Detect when the user stops/pauses scrolling (clears gesture lock)
+        // Detect when the user stops/pauses scrolling
         clearTimeout(scrollStopTimer);
         scrollStopTimer = setTimeout(() => {
             scrollLock = false;
-        }, 10);
+        }, 13);
 
         // If lock is active or transition is running, ignore trailing wheel momentum
         if (scrollLock || isTransitioning) return;
 
-        // Perform exactly 1 slide shift and lock until scroll inertia stops
         if (Math.abs(e.deltaY) > 5) {
             scrollLock = true;
             if (e.deltaY > 0) {
