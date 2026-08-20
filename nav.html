@@ -1,10 +1,24 @@
-<!--Handles navbar.  Will be easier to manage/implement rather than leaving everything in js-->
-<nav class="navbar">
-    <!-- Use root-relative paths starting with / or relative paths depending on hosting, 
-         or use standard relative links adjusted for whether you are in root or scenes/ -->
-    <button class="buttonStyle" onclick="location.href='index.html'">Home</button>
-    <button class="buttonStyle" onclick="location.href='scenes/page2.html'">Financial Support</button>
-    <button class="buttonStyle" onclick="location.href='scenes/page3.html'">Community Events</button>
-    <button class="buttonStyle" onclick="location.href='scenes/page4.html'">Wellness Tips</button>
-    <button class="buttonStyle" onclick="location.href='scenes/page5.html'">About Us</button>
-</nav>
+<header class="site-navbar">
+    <div class="nav-container">
+        <!-- LEFT: Brand & Logo -->
+        <a href="/index.html" class="nav-brand">
+            <img src="/assets/Logo1.png" alt="OneCare Guam Logo" class="nav-logo-img">
+            <span class="nav-brand-title">OneCare Guam</span>
+        </a>
+
+        <!-- CENTER: Navigation Links -->
+        <ul class="nav-links">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/scenes/page2.html">Financial Support</a></li>
+            <li><a href="/scenes/page3.html">Community Events</a></li>
+            <li><a href="/scenes/page4.html">Wellness Tips</a></li>
+            <li><a href="/scenes/page5.html">About Us</a></li>
+        </ul>
+
+        <!-- RIGHT: "Join Us" style Button -->
+        <div class="nav-cta">
+            <a href="https://gofundme.com" target="_blank" rel="noopener noreferrer" class="btn-primary">Make a
+                Difference</a>
+        </div>
+    </div>
+</header>

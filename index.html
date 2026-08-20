@@ -12,117 +12,47 @@
 
 <body>
 
-<div id="navbarHolder"></div>
+<!-- Nav Bar -->
+<header id="navbarHolder" class="site-navbar"></header>
 
-<div class="content-container">
-    <!-- Left Side: Main Title -->
-    <div class="title-side">
-        <h1>OneCare <br> Guam</h1>
-    </div>
-   
-    <!-- Right Side: Logo & Donate Button stacked together -->
-    <div class="header-right">
-        <div class="hands">
-            <img src="assets/Logo1.png" width="200" height="150" alt="OneCare Guam Logo">
-        </div>
-     
-        <div class="donate">
-            <a href="https://gofundme.com" target="_blank" rel="noopener noreferrer">
-                <button class="donatebutton">Make a Difference</button>
-            </a>
-        </div>
-    </div>
-</div>
-
-<p class="mission-statement">
-    Our mission is to bridge the gap between individuals and healthcare
-    <br>providing easy access to trusted information, local resources, and services.
-    <br>We strive to make healthcare more accessible, understandable,
-    <br>and inclusive for every member of our community.
-</p>
+<!-- Hero Banner -->
+<section class="hero-banner">
+  <div class="hero-content">
+    <h1>Connecting Guam to Trusted Healthcare</h1>
+    <p>Our mission is to bridge the gap between individuals and healthcare by providing easy access to trusted information, local resources, and services. We strive to make healthcare more accessible, understandable, and inclusive for every member of our community.</p>
+    
+    <!-- Here is the button added back to the hero! -->
+    <a href="https://gofundme.com" target="_blank" rel="noopener noreferrer" class="btn-primary" style="display: inline-block; margin-top: 10px;">Make a Difference</a>
+  </div>
+</section>
 
 <!-- Handles picture slider. Uses a container and says how many pics there are -->
+<!-- The New 3D Carousel Section -->
 <h2 class="section-title">Guam Community</h2>
 
-<div class="container">
-  <div class="mySlides">
-    <div class="numbertext">1 / 6</div>
-    <img src="assets/or1.jpg" alt="Blood sugar screening at Dededo Senior Citizens Center">
-  </div>
-
-  <div class="mySlides">
-    <div class="numbertext">2 / 6</div>
-    <img src="assets/or2.jpg" alt="DPHSS Mobile Health Clinic">
-  </div>
-
-  <div class="mySlides">
-    <div class="numbertext">3 / 6</div>
-    <img src="assets/or3.webp" alt="Todu Guam Foundation Prevention and Education program">
-  </div>
+<section class="community-carousel-section">
+  <div class="carousel-container">
     
-  <div class="mySlides">
-    <div class="numbertext">4 / 6</div>
-    <img src="assets/or4.webp" alt="Todu Guam Mobile Care Clinic">
-  </div>
-
-  <div class="mySlides">
-    <div class="numbertext">5 / 6</div>
-    <img src="assets/or5.webp" alt="Homeless health outreach at Salvation Army">
-  </div>
-    
-  <div class="mySlides">
-    <div class="numbertext">6 / 6</div>
-    <img src="assets/or6.jpg" alt="Back-to-School Immunization Outreach">
-  </div>
-
-  <div class="caption-container">
-    <p id="caption"></p>
-  </div>
-
-  <div class="row">
-    <div class="column">
-      <img class="demo cursor" src="assets/or1.jpg" style="width:100%" onclick="currentSlide(1)" alt="Thumbnail 1">
-      <div class="overlay">
-        A resident receives a blood sugar screening during a Guam Regional Medical City health outreach at the Dededo Senior Citizens Center. The event provided free health screenings and medical services for Guam residents from the Federated States of Micronesia, helping improve access to preventive care and health education.
-      </div>
-    </div> 
-
-    <div class="column">
-      <img class="demo cursor" src="assets/or2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Thumbnail 2">
-      <div class="overlay">
-        The DPHSS Mobile Health Clinic brings free health screenings, preventive care, and health education directly to Guam's communities, improving access to care for underserved residents and connecting them with ongoing health services.
+    <!-- Left Side: Dynamic Text -->
+    <div class="carousel-text-content">
+      <span id="carousel-tag" class="item-tag">Community Outreach</span>
+      <h3 id="carousel-title" class="main-heading">Loading...</h3>
+      <p id="carousel-desc" class="lead-text">Please wait while the stories load.</p>
+      
+      <div class="carousel-controls" id="carousel-dots">
+        <!-- Dots injected by JS -->
       </div>
     </div>
 
-    <div class="column">
-      <img class="demo cursor" src="assets/or3.webp" style="width:100%" onclick="currentSlide(3)" alt="Thumbnail 3">
-      <div class="overlay">
-        Todu Guam Foundation’s Prevention and Education program promotes proactive well-being through “Let’s Talk” forums and preventive health services. The program encourages positive lifestyle changes, covers broad health topics, and holds talks across the community.
+    <!-- Right Side: 3D Stage -->
+    <div class="carousel-stage-3d">
+      <div id="rotatorChamber" class="rotator-chamber">
+        <!-- Cards injected by JS -->
       </div>
     </div>
 
-    <div class="column">
-      <img class="demo cursor" src="assets/or4.webp" style="width:100%" onclick="currentSlide(4)" alt="Thumbnail 4">
-      <div class="overlay">
-        The Todu Guam Mobile Care Clinic brings free primary and preventive health services directly to underserved communities, reducing transportation barriers and improving access to care. Services include medical checkups, immunizations, vision and oral screenings, physical exams, and other basic health care at no cost.
-      </div>
-    </div>
-
-    <div class="column">
-      <img class="demo cursor" src="assets/or5.webp" style="width:100%" onclick="currentSlide(5)" alt="Thumbnail 5">
-      <div class="overlay">
-        The Guam Medical Association held a homeless health outreach at the Salvation Army Light House Recovery Center, providing free health consultations and blood pressure screenings to support the community's health needs.
-      </div>    
-    </div>
-
-    <div class="column">
-      <img class="demo cursor" src="assets/or6.jpg" style="width:100%" onclick="currentSlide(6)" alt="Thumbnail 6">
-      <div class="overlay">
-        The Department of Public Health and Social Services hosted a Back-to-School Immunization Outreach, providing free routine vaccinations for eligible children to help families prepare for the school year and improve access to preventive health care.
-      </div>
-    </div>
   </div>
-</div>
+</section>
 
 <div id="footerHolder"></div>
 
