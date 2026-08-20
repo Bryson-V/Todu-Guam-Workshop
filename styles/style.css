@@ -256,7 +256,6 @@ p {
 }
 
 .hero-banner {
-  background-image: url('../assets/HeroBackground.avif');
   background-size: cover;
   background-position: center top; 
   background-repeat: no-repeat;
