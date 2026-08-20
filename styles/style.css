@@ -255,31 +255,78 @@ p {
   color: #ffffff;
 }
 
-/* --- Hero Banner --- */
 .hero-banner {
-  background-color: #eef5f3; 
-  padding: 80px 20px;
+  background-image: url('../assets/HeroBackground.avif');
+  background-size: cover;
+  background-position: center top; 
+  background-repeat: no-repeat;
+  position: relative;
+
+  background-color: #ffffff; 
+  padding: 60px 20px 80px;
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 480px;
 }
 
 .hero-content {
-  max-width: 800px;
+  max-width: 700px;
   margin: 0 auto;
+  
+  background: rgba(255, 255, 255, 0.80);
+  padding: 40px 35px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(6px);
 }
 
 .hero-content h1 {
-  font-size: 2.8rem;
-  color: #1a1a1a;
-  margin-bottom: 20px;
-  line-height: 1.2;
+  font-size: 2.5rem;
+  color: #1a2b4c;
+  margin-bottom: 16px;
+  line-height: 1.25;
 }
 
 .hero-content p {
-  font-size: 1.2rem;
-  color: #4a5568;
-  margin-bottom: 30px;
-  max-width: 700px;
+  font-size: 1.1rem;
+  color: #334155;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.section-header {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  padding: 0 20px;
+}
+
+.section-subtitle {
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #10b981;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  color: #1a2b4c;
+  margin-bottom: 10px;
+}
+
+.section-desc {
+  font-size: 1.05rem;
+  color: #64748b;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
 }
 
 /* --- 3D Carousel Layout --- */
