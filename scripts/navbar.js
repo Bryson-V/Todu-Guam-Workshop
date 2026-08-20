@@ -16,7 +16,7 @@ function loadNavbar() {
         <div class="nav-container">
             <!-- Logo Section -->
             <a href="${pathToRoot}index.html" class="nav-brand">
-                <img src="${pathToRoot}assets/Logo1.png" alt="OneCare Guam Logo" class="nav-logo-img">
+                <img src="${pathToRoot}assets/LogoNoBG.png" alt="OneCare Guam Logo" class="nav-logo-img">
                 <span class="nav-brand-title">OneCare Guam</span>
             </a>
 

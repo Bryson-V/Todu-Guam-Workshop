@@ -21,7 +21,7 @@ function loadFooter() {
 
                 const logoImg = holder.querySelector('.footer-logo');
                 if (logoImg) {
-                    logoImg.setAttribute('src', pathToRoot + 'assets/Logo1.png');
+                    logoImg.setAttribute('src', pathToRoot + 'assets/LogoNoBG.png');
                 }
             }
         })
