@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="../styles/page4.css">
     <link rel="stylesheet" href="../styles/navbar.css">
 </head>
-
 <body>
 
 <div id="navbarHolder"></div>
@@ -16,12 +15,12 @@
 <div class="header">
   <h1>Healthy Habits</h1> 
 </div>
-<!--Intro Text for page-->
+
 <p class="intro-text">
   Maintain a healthy lifestyle by exploring our wellness categories below. 
   <br>Good daily habits help prevent illness, improve overall well-being, and support a longer, healthier life.
 </p>
-<!-- This section was completely added.  uses classes for filters.  All tips has active since it is the current active one-->
+
 <!-- FILTER BUTTONS -->
 <div class="filter-container">
   <button class="filter-btn active" data-filter="all">All Tips</button>
@@ -30,74 +29,20 @@
   <button class="filter-btn" data-filter="hygiene">Hygiene & Lifestyle</button>
 </div>
 
-<!-- CARDS GRID CONTAINER -->
-<div class="tips-grid">
-  <!-- CARD 1: DIET -->
-  <div class="tip-card filterDiv diet">
-    <div class="tip-image-box">
-      <img src="../assets/food.jpg" alt="Balanced diet">
-    </div>
-    <div class="tip-content">
-      <h2>Diet & Nutrition</h2>
-      <p>Choose a balanced diet with plenty of fruits, vegetables, whole grains, and lean proteins. Eating healthy provides essential nutrients and boosts your immune system.</p>
+<!-- CARDS GRID CONTAINER (Populated dynamically via JavaScript) -->
+<div class="tips-grid" id="tipsGrid"></div>
+
+<!-- MODAL POPUP STRUCTURE -->
+<div id="tipModal" class="modal-overlay">
+  <div class="modal-content">
+    <button class="modal-close" id="modalClose">&times;</button>
+    <div class="modal-body">
+      <img id="modalImage" src="" alt="">
+      <h2 id="modalTitle"></h2>
+      <p id="modalDescription"></p>
+      <a id="modalLink" href="#" target="_blank" rel="noopener noreferrer" class="modal-btn">Learn More External Reference</a>
     </div>
   </div>
-
-  <!-- CARD 2: EXERCISE -->
-  <div class="tip-card filterDiv exercise">
-    <div class="tip-image-box">
-      <img src="../assets/exercise.webp" alt="Physical activity">
-    </div>
-    <div class="tip-content">
-      <h2>Physical Activity & Exercise</h2>
-      <p>Engage in regular physical activity to maintain a healthy weight, strengthen your heart, and reduce the risk of chronic diseases.</p>
-    </div>
-  </div>
-
-  <!-- CARD 3: HYGIENE -->
-  <div class="tip-card filterDiv hygiene">
-    <div class="tip-image-box">
-      <img src="../assets/Wash.jpeg" alt="Wash your hands">
-    </div>
-    <div class="tip-content">
-      <h2>Hygiene & Prevention</h2>
-      <p>Wash your hands regularly with soap and clean water for at least 20 seconds to remove germs and prevent the spread of illnesses.</p>
-    </div>
-  </div>
-
-  <!-- CARD 4: LIFESTYLE -->
-  <div class="tip-card filterDiv hygiene">
-    <div class="tip-image-box">
-      <img src="../assets/Drinking.png" alt="Limit alcohol">
-    </div>
-    <div class="tip-content">
-      <h2>Avoid Harmful Habits</h2>
-      <p>Limit or avoid alcohol and do not smoke. These habits increase the risk of serious health problems like heart disease and cancer.</p>
-    </div>
-  </div>
-
-  <!-- CARD 5: SLEEP -->
-  <div class="tip-card filterDiv hygiene">
-    <div class="tip-image-box">
-      <img src="../assets/sleep.jpg" alt="Quality sleep">
-    </div>
-    <div class="tip-content">
-      <h2>Rest & Recovery</h2>
-      <p>Prioritize quality sleep by maintaining a consistent schedule to support immune function, cognitive performance, and emotional well-being.</p>
-    </div>
-  </div>
-
-  <!-- CARD 6: HYDRATION -->
-  <div class="tip-card filterDiv diet">
-    <div class="tip-image-box">
-      <img src="../assets/water.webp" alt="Stay hydrated">
-    </div>
-    <div class="tip-content">
-      <h2>Hydration</h2>
-      <p>Stay hydrated by drinking plenty of water throughout the day to maintain bodily functions and regulate temperature.</p>
-    </div>
-  </div>
-
 </div>
 
 <div class="botlogo"> 
@@ -106,7 +51,6 @@
 
 <div id="footerHolder"></div>
 
-<!-- All script execution is handled via external JS files to keep HTML clean -->
 <script src="../scripts/navbar.js"></script>
 <script src="../scripts/wellness-filter.js"></script>
 <script src="../scripts/footer.js"></script>

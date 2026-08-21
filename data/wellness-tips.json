@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "category": "diet",
+    "title": "Diet & Nutrition",
+    "image": "../assets/food.jpg",
+    "alt": "Balanced diet",
+    "shortDescription": "Choose a balanced diet with plenty of fruits, vegetables, whole grains, and lean proteins.",
+    "modalDescription": "Eating a balanced diet provides essential nutrients, boosts your immune system, and reduces the risk of chronic diseases such as diabetes and hypertension.",
+    "link": "https://www.cdc.gov/nutrition/index.html"
+  },
+  {
+    "id": 2,
+    "category": "exercise",
+    "title": "Physical Activity & Exercise",
+    "image": "../assets/exercise.webp",
+    "alt": "Physical activity",
+    "shortDescription": "Engage in regular physical activity to maintain a healthy weight and strengthen your heart.",
+    "modalDescription": "Aim for at least 150 minutes of moderate aerobic activity per week. Regular exercise improves mental health, mood, and sleep quality.",
+    "link": "https://www.cdc.gov/physicalactivity/index.html"
+  },
+  {
+    "id": 3,
+    "category": "hygiene",
+    "title": "Hygiene & Prevention",
+    "image": "../assets/Wash.jpeg",
+    "alt": "Wash your hands",
+    "shortDescription": "Wash your hands regularly with soap and clean water for at least 20 seconds.",
+    "modalDescription": "Handwashing is one of the most effective ways to prevent the spread of germs and avoid getting sick or spreading germs to others.",
+    "link": "https://www.cdc.gov/handwashing/index.html"
+  },
+  {
+    "id": 4,
+    "category": "hygiene",
+    "title": "Avoid Harmful Habits",
+    "image": "../assets/Drinking.png",
+    "alt": "Limit alcohol",
+    "shortDescription": "Limit or avoid alcohol and do not smoke to reduce serious health risks.",
+    "modalDescription": "Avoiding tobacco and minimizing alcohol intake lowers your risk for heart disease, liver disease, and many forms of cancer.",
+    "link": "https://www.cdc.gov/tobacco/index.htm"
+  },
+  {
+    "id": 5,
+    "category": "hygiene",
+    "title": "Rest & Recovery",
+    "image": "../assets/sleep.jpg",
+    "alt": "Quality sleep",
+    "shortDescription": "Prioritize quality sleep by maintaining a consistent schedule.",
+    "modalDescription": "Most adults need 7–9 hours of sleep per night. Good sleep improves cognitive function, emotional resilience, and overall cardiovascular health.",
+    "link": "https://www.cdc.gov/sleep/index.html"
+  },
+  {
+    "id": 6,
+    "category": "diet",
+    "title": "Hydration",
+    "image": "../assets/water.webp",
+    "alt": "Stay hydrated",
+    "shortDescription": "Stay hydrated by drinking plenty of water throughout the day.",
+    "modalDescription": "Water keeps every system in the body functioning properly. It aids digestion, regulates body temperature, and prevents dehydration headaches.",
+    "link": "https://www.cdc.gov/healthyweight/healthy_eating/water-health.html"
+  }
+]

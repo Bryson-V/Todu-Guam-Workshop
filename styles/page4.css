@@ -1,4 +1,4 @@
-/* --- Page 4 Specific Layout (Filtered Card Grid) --- */
+/* --- ORIGINAL PAGE 4 SPECIFIC LAYOUT (FILTERED CARD GRID) --- */
 
 .intro-text {
   margin-bottom: 25px;
@@ -38,7 +38,7 @@
 }
 
 /* Cards Grid Container */
-.tips-grid {
+#tipsGrid.tips-grid { /* Added ID for stronger selector */
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
   gap: 25px;
@@ -58,6 +58,7 @@
   flex-direction: column;
   gap: 15px;
   transition: transform 0.2s ease;
+  cursor: pointer; /* NEW: Added to show the card is clickable */
 }
 
 .tip-card:hover {
@@ -67,7 +68,7 @@
 /* Thumbnail Image Box (Controlled, compact size) */
 .tip-image-box {
   width: 100%;
-  height: 160px;
+  height: 160px; /* ORIGINAL Fixed Height */
   background-color: #f8f9fa;
   border-radius: 6px;
   overflow: hidden;
@@ -79,7 +80,7 @@
 .tip-image-box img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: contain; /* ORIGINAL Fitting */
 }
 
 /* Card Content */
@@ -87,6 +88,7 @@
   font-size: 1.15rem;
   color: #2c3e50;
   margin-bottom: 8px;
+  margin-top: 0; /* Ensures consistent alignment */
 }
 
 .tip-content p {
@@ -95,4 +97,100 @@
   line-height: 1.5;
   margin: 0;
   text-align: left;
+}
+
+/* --- ISOLATED MODAL POPUP STYLES (NEW) --- */
+
+.modal-overlay {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.modal-overlay.open {
+  display: flex;
+}
+
+/* Modal Content Box */
+.modal-content {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  animation: modalFadeIn 0.25s ease-out; /* Unique animation name */
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 18px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #64748b;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 15px;
+}
+
+/* MODAL Image Sizing (Separate from Card Image Sizing) */
+.modal-body img {
+  max-width: 100%;
+  max-height: 180px; /* Control image height in popup */
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.modal-body h2 {
+  color: #1e3a8a;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.modal-body p {
+  color: #475569;
+  line-height: 1.5;
+  margin: 0;
+  font-size: 15px;
+}
+
+.modal-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 22px;
+  background-color: #1e3a8a;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: background 0.2s ease;
+  border: none;
+}
+
+.modal-btn:hover {
+  background-color: #2563eb;
 }
